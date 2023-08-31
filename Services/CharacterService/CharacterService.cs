@@ -26,7 +26,9 @@ namespace dotnet_rpg.Services.CharacterService
 
         public Character GetCharacterById(int id)
         {
-            return characters.FirstOrDefault(c => c.Id == id);
+            var character = characters.FirstOrDefault(c => c.Id == id)!;
+            if(character is not null) return character;
+            else throw new Exception("Character not found");
         }
     }
 }

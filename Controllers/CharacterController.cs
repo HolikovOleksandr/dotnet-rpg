@@ -6,7 +6,6 @@ namespace dotnet_rpg;
 public class CharacterController : ControllerBase
 {
     private readonly ICharacterService _characterService;
-
     public CharacterController(ICharacterService characterService)
     {
         _characterService = characterService;
