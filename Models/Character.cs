@@ -11,5 +11,4 @@ public class Character
     public int Defence { get; set; } = 10;
     public int Intellengece { get; set; } = 10;
     public RpgClass Class { get; set; } = RpgClass.Thief;
-
 }

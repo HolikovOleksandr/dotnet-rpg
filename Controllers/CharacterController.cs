@@ -5,7 +5,7 @@ namespace dotnet_rpg;
 [Route("api/[controller]")]
 public class CharacterController : ControllerBase
 {
-    private static List<Character> characters = new List<Character>{
+    private static List<Character> characters = new List<Character> {
         new Character(),
         new Character{ Id = 1, Name = "Sam"},
     };
@@ -20,5 +20,12 @@ public class CharacterController : ControllerBase
     public ActionResult<List<Character>> GetSingle(int id)
     {
         return Ok(characters.FirstOrDefault(c => c.Id == id));
+    }
+
+    [HttpPost]
+    public ActionResult<List<Character>> AddCharacter(Character character)
+    {
+        characters.Add(character );
+        return Ok(character);
     }
 }
